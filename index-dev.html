@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Isometric Diagrams</title>
+  <script src="src/canvas.js"></script>
+  <script src="src/color.js"></script>
+  <script src="src/vector.js"></script>
+  <script src="src/diagram.js"></script>
+  <script src="src/point.js"></script>
+
+  <!-- paths: -->
+  <script src="src/path/path.js"></script>
+  <script src="src/path/circle.js"></script>
+
+  <!-- shapes: -->
+  <script src="src/shape/shape.js"></script>
+  <script src="src/shape/prism.js"></script>
+  <script src="src/shape/cylinder.js"></script>
+</head>
+<body>
+<canvas id="demo1" style="width: 800px; height: 600px;" width="1600" height="1200"></canvas>
+<script>
+  var red = new Color(215, 0, 0, 1.0);
+  var green = new Color(0, 215, 0, 1.0);
+  var white = new Color(210, 210, 210, 1.0);
+
+  var d = new Diagram(new Canvas(document.getElementById("demo1"), '2d'));
+
+  d.addShape(new Prism(P(0, 2, 0), 1, 1, 0.1), white);
+  d.addShape(new Prism(P(0, 1, 0), 1, 1, 0.1), white);
+  d.addShape(new Prism(P(0, 0, 0), 1, 1, 0.1), white);
+
+  d.addShape(new Prism(P(1, 2, 0), 1, 1, 0.1), white);
+  d.addShape(new Prism(P(1, 1, 0), 1, 1, 0.1), white);
+  d.addShape(new Prism(P(1, 0, 0), 1, 1, 0.1), white);
+
+  d.addShape(new Prism(P(2, 2, 0), 1, 1, 0.1), white);
+  d.addShape(new Prism(P(2, 1, 0), 1, 1, 0.1), white);
+  d.addShape(new Prism(P(2, 0, 0), 1, 1, 0.1), white);
+
+  d.addShape(new Cylinder(P(1 + 0.6, 1 + 0.6, 0), 0.3, 8, 0.5), red);
+
+  d.draw();
+</script>
+</body>
+</html>
