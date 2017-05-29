@@ -6,7 +6,7 @@ class PathWithColor {
 }
 
 class Diagram {
-  constructor(canvas, options={}) {
+  constructor(canvas, offCanvas, options={}) {
     this.canvas = canvas;
     this.angle = Math.PI / 6;
     this.scale = options.scale || 70;
@@ -32,6 +32,10 @@ class Diagram {
     this.lightColor = options.lightColor || new Color(255, 255, 255);
 
     this.pathsToDraw = [];
+
+    this.offCanvas = offCanvas;
+    this.offCanvas.clearAll();
+    this.offCanvas.drawText("this is a test");
   }
 
   _calculateTransformation() {
